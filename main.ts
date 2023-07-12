@@ -227,4 +227,5 @@ const getPropertyInfoFromPage = async (page: Page): Promise<Infocasa> => {
 
     await context.close();
     await browser.close();
+    await pg.end();
 })();
