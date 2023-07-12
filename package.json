@@ -1,0 +1,26 @@
+{
+  "name": "infopy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/main.js",
+  "scripts": {
+    "dev": "tsc --build && node ./dist/main.js",
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Walker088",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.3.3",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@canvas/image": "^1.0.1",
+    "axios": "^1.4.0",
+    "blockhash-core": "^0.1.0",
+    "playwright": "^1.35.1",
+    "postgres": "^3.3.5"
+  }
+}

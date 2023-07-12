@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"lib": [ "es2015", "es2017", "dom" ],
+		"module": "CommonJS",
+		"target": "es2015",
+		"outDir": "dist",
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+
+		"strictNullChecks": true,
+		"noImplicitAny": true,
+		"strictFunctionTypes": true,
+		"strictBindCallApply": true,
+		"strictPropertyInitialization": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitThis": true,
+
+		"isolatedModules": true,
+		"useDefineForClassFields": true,
+	}
+}
