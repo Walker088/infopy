@@ -1,7 +1,8 @@
 
 export type CrawlerConfig = {
-    database: DataBase
-}
+    database: DataBase,
+    crawlers: Array<Crawler>,
+};
 
 export type DataBase = {
     name: string,
@@ -10,4 +11,11 @@ export type DataBase = {
     user: string,
     pass: string,
     dbName: string,
-}
+};
+
+export type Crawler = {
+    name:    string,
+    target:  string,
+    enabled: boolean,
+    extra?:  Object,
+};

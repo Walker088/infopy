@@ -57,6 +57,12 @@ COMMENT ON COLUMN public.crawled_records.crawled_date IS 'Day of a record be cra
 COMMENT ON COLUMN public.crawled_records.source_type IS 'The data source type, relates to table types';
 
 -- Table of source infocasa
+CREATE TABLE IF NOT EXISTS public.infocasa_alquiler_photos (
+    property_id TEXT PRIMARY KEY,
+    property_photos TEXT
+);
+
+-- Table of source infocasa
 CREATE TABLE IF NOT EXISTS public.infocasa_alquiler (
     crawled_id character varying(10) NOT NULL,
     property_id TEXT NOT NULL,
@@ -89,11 +95,12 @@ CREATE TABLE IF NOT EXISTS public.infocasa_alquiler (
     vivienda_social TEXT,
     built_at TEXT,
     amenities TEXT[],
-    property_photos TEXT[],
     descr TEXT,
     original_url TEXT,
+    content_checksum TEXT,
     PRIMARY KEY (crawled_id, property_id),
-    FOREIGN KEY (crawled_id) REFERENCES crawled_records (crawled_id)
+    FOREIGN KEY (crawled_id) REFERENCES crawled_records (crawled_id),
+    FOREIGN KEY (property_id) REFERENCES infocasa_alquiler_photos (property_id)
 );
 COMMENT ON COLUMN public.infocasa_alquiler.crawled_id IS 'Relates to public.crawled_records.crawled_id';
 COMMENT ON COLUMN public.infocasa_alquiler.property_id IS 'Crawled from infocasa';
@@ -101,3 +108,4 @@ COMMENT ON COLUMN public.infocasa_alquiler.department_id IS 'Relates to table pr
 COMMENT ON COLUMN public.infocasa_alquiler.district_id IS 'Relates to table property_district';
 COMMENT ON COLUMN public.infocasa_alquiler.nroom IS 'Number of rooms in a property';
 COMMENT ON COLUMN public.infocasa_alquiler.nbath IS 'Number of bathrooms in a property';
+COMMENT ON COLUMN public.infocasa_alquiler.content_checksum IS 'SHA1 hash value of the parsed record';
